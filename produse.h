@@ -20,6 +20,7 @@ public :
     virtual std::shared_ptr<echipament> clone() = 0 ;
     virtual void shopping(double sum) = 0;
     virtual void Descriere_inventar_general() = 0;
+    virtual ~echipament() = default;
 };
 
 class undita : public echipament
@@ -35,6 +36,7 @@ public :
     std::shared_ptr<echipament> clone() override;
     void shopping(double sum) override;
     void Descriere_inventar_general() override;
+    virtual ~undita() = default;
 };
 
 class carlig : public echipament
@@ -50,6 +52,7 @@ public :
     std::shared_ptr<echipament> clone() override;
     void shopping(double sum) override;
     void Descriere_inventar_general() override;
+    virtual ~carlig() = default;
 };
 
 class mamaliga : public echipament
@@ -66,5 +69,6 @@ public :
     std::shared_ptr<echipament> clone() override;
     void shopping(double sum) override;
     void Descriere_inventar_general() override;
+    virtual ~mamaliga() = default;
 };
 #endif // PRODUSE_H
