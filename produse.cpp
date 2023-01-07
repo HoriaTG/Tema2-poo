@@ -149,14 +149,11 @@ void undita::shopping(double sum)
     double x = sum;
     int y = pret_total();
 
-    while(sum >= 0 && stoc > 0 && sum-pret >= 0)
+    while(stoc > 0 && sum-pret >= 0)
     {
-        if(sum-pret >= 0)
-           {
                contor++;
                sum = sum-pret;
                stoc--;
-           }
     }
 
     std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" undite din "<<material<<" cu lungimea de "<<lungime<<" metri "<<std::endl;
@@ -172,14 +169,11 @@ void carlig::shopping(double sum)
     double x = sum;
     int y = pret_total();
 
-    while(sum >= 0 && stoc > 0 && sum-pret >= 0)
+    while(stoc > 0 && sum-pret >= 0)
     {
-        if(sum-pret >= 0)
-           {
                contor++;
                sum = sum-pret;
                stoc--;
-           }
     }
 
     std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" carlige din "<<material<<" cu dimensiunea de "<<dimensiune<<std::endl;
@@ -195,14 +189,11 @@ void mamaliga::shopping(double sum)
     double x = sum;
     int y = pret_total();
 
-    while(sum >= 0 && stoc > 0 && sum-pret >= 0)
+    while(stoc > 0 && sum-pret >= 0)
     {
-        if(sum-pret >= 0)
-           {
                contor++;
                sum = sum-pret;
                stoc=stoc-1;
-           }
     }
 
     std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" mamaligi din "<<material<<" cu aroma de "<<aroma<<" si culoarea "<<culoare<<std::endl;
