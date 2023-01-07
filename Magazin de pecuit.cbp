@@ -38,8 +38,6 @@
 		<Unit filename="angajat.h" />
 		<Unit filename="exceptii.cpp" />
 		<Unit filename="exceptii.h" />
-		<Unit filename="inventar.cpp" />
-		<Unit filename="inventar.h" />
 		<Unit filename="magazin.cpp" />
 		<Unit filename="magazin.h" />
 		<Unit filename="main.cpp" />

@@ -86,7 +86,7 @@ std::ostream &operator<<(std::ostream &os,const echipament &ech)
     os<<"Material : "<<ech.material<<std::endl<<"Pret : "<<ech.pret<<std::endl<<"Stoc : "<<ech.stoc<<std::endl;
     return os;
 }
-/*
+
 void echipament::swap( echipament &ech1, echipament &ech2)
 {
     std::swap(ech1.material,ech2.material);
@@ -142,7 +142,7 @@ mamaliga &mamaliga::operator=(mamaliga &other)
     swap(*this,other);
     return *this;
 }
-*/
+
 void undita::shopping(double sum)
 {
     int contor = 0;
