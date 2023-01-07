@@ -41,13 +41,13 @@ endif()
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} main.cpp)
-file(GLOB SOURCES
-    header-folder/*.h
-    source-folder/*.cpp
+add_executable(${PROJECT_NAME} main.cpp
+angajat.cpp
+magazin.cpp
+produse.cpp
+exceptii.cpp
 )
 
-add_executable(yourProj ${SOURCES})
 ###############################################################################
 
 # target definitions
