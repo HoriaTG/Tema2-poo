@@ -2,6 +2,7 @@
 #define ANGAJAT_H
 #include<iostream>
 #include<vector>
+#include<string>
 
 class angajat
 {

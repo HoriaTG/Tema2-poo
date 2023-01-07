@@ -2,6 +2,7 @@
 #define MAGAZIN_H
 #include<vector>
 #include<iostream>
+#include<string>
 #include "angajat.h"
 
 class magazin

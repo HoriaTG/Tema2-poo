@@ -1,6 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <memory>
+#include<iostream>
+#include<vector>
+#include<memory>
+#include<string>
 #include "angajat.h"
 #include "magazin.h"
 #include "produse.h"
