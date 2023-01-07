@@ -42,9 +42,9 @@ endif()
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
 add_executable(${PROJECT_NAME} main.cpp)
-    Tema2-poo/angajat.cpp
-    Tema2-poo/produs.cpp
-    Tema2-poo/magazin.cpp
+angajat.cpp
+produs.cpp
+magazin.cpp
 ###############################################################################
 
 # target definitions
