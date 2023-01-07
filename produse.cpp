@@ -14,14 +14,14 @@ echipament::echipament(const std::string &material,double pret,int stoc)
 undita::undita(const std::string &material,double pret,int stoc,int lungime) : echipament(material,pret,stoc)
 {
     this->lungime = lungime;
-    if(lungime < 3 || lungime > 6)
+    if(this->lungime < 3 || this->lungime > 6)
         throw lungime_eronata("Lungimea minima a unditelor e 3 metri , iar cea maxima este 6 metri");
 }
 
 carlig::carlig(const std::string &material,double pret,int stoc,int dimensiune) : echipament(material,pret,stoc)
 {
     this->dimensiune = dimensiune;
-    if(dimensiune < 2 || dimensiune > 18)
+    if(this->dimensiune < 2 || this->dimensiune > 18)
         throw dimensiune_eronata("Dimensiunea minima a carligelor e 2 , iar cea maxima 18");
 }
 

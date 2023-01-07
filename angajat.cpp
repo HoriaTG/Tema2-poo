@@ -6,7 +6,7 @@ angajat::angajat(const std::string &nume, double salariu,int ani_experienta)
     this->nume = nume;
     this->salariu = salariu;
     this->ani_experienta = ani_experienta;
-    if(ani_experienta < 5 )
+    if(this->ani_experienta < 5 )
         throw necalificat("Minim 5 ani de experienta in domeniu");
 }
 
