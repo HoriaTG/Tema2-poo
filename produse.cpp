@@ -143,77 +143,28 @@ mamaliga &mamaliga::operator=(mamaliga &other)
     return *this;
 }
 
-void undita::shopping(double sum)
+int echipament::valoare_inventar()
 {
-    int contor = 0;
-    double x = sum;
-    int y = pret_total();
-
-    while(stoc > 0 && sum-pret >= 0)
-    {
-               contor++;
-               sum = sum-pret;
-               stoc--;
-    }
-
-    std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" undite din "<<material<<" cu lungimea de "<<lungime<<" metri "<<std::endl;
-    if(stoc > 0)
-        std::cout<<"Ar mai ramane in stoc "<<stoc<<" bucati . Valoarea totala initiala a fost de "<<y<<" lei si ti-ar mai ramane "<<sum<<" lei"<<std::endl<<std::endl;
-    else
-        std::cout<<"Stoc epuizat . Ti-ar mai ramane "<<sum<<" lei "<<std::endl<<std::endl;
+    return stoc*pret;
 }
 
-void carlig::shopping(double sum)
+int undita::Eficienta()
 {
-    int contor = 0;
-    double x = sum;
-    int y = pret_total();
-
-    while(stoc > 0 && sum-pret >= 0)
-    {
-               contor++;
-               sum = sum-pret;
-               stoc--;
-    }
-
-    std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" carlige din "<<material<<" cu dimensiunea de "<<dimensiune<<std::endl;
-    if(stoc > 0)
-        std::cout<<"Ar mai ramane in stoc "<<stoc<<" bucati . Valoarea totala initiala a fost de "<<y<<" lei "<<std::endl<<std::endl;
-    else
-        std::cout<<"Stoc epuizat. Ti-ar mai ramane "<<sum<<" lei "<<std::endl<<std::endl;
+    if(pret/lungime + 10 > 30)
+        return 1;
+    return 0;
 }
 
-void mamaliga::shopping(double sum)
+int carlig::Eficienta()
 {
-    int contor = 0;
-    double x = sum;
-    int y = pret_total();
-
-    while(stoc > 0 && sum-pret >= 0)
-    {
-               contor++;
-               sum = sum-pret;
-               stoc=stoc-1;
-    }
-
-    std::cout<<"Cu suma de "<<x<<" lei ai putea sa cumperi "<<contor<<" mamaligi din "<<material<<" cu aroma de "<<aroma<<" si culoarea "<<culoare<<std::endl;
-    if(stoc > 0)
-        std::cout<<"Ar mai ramane in stoc "<<stoc<<" bucati . Valoarea totala initiala a fost de "<<y<<" lei "<<std::endl<<std::endl;
-    else
-        std::cout<<"Stoc epuizat. Ti-ar mai ramane "<<sum<<" lei "<<std::endl<<std::endl;
+    if(dimensiune*pret/stoc > 5)
+        return 1;
+    return 0;
 }
 
-void undita::Descriere_inventar_general()
+int mamaliga::Eficienta()
 {
-    std::cout<<"Undita din "<<material<<" cu lungimea de "<<lungime<<" metri"<<", costa "<<pret<<" lei, "<<stoc<< " bucati disponibile . "<<std::endl<<std::endl;
-}
-
-void carlig::Descriere_inventar_general()
-{
-    std::cout<<"Carligul din "<<material<<" cu dimensiunea de "<<dimensiune<<", costa "<<pret<<" lei, "<<stoc<< " bucati disponibile . "<<std::endl<<std::endl;
-}
-
-void mamaliga::Descriere_inventar_general()
-{
-    std::cout<<"Mamaliga cu aroma de "<<aroma<<" si culoarea "<<culoare<<", costa "<<pret<<" lei, "<<stoc<< " bucati disponibile . "<<std::endl<<std::endl;
+    if((pret+pret)/4*stoc > 10)
+        return 1;
+    return 0;
 }

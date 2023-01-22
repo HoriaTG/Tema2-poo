@@ -19,8 +19,8 @@ public :
     void swap( echipament &ech1, echipament &ech2);
     int pret_total();
     virtual std::shared_ptr<echipament> clone() = 0 ;
-    virtual void shopping(double sum) = 0;
-    virtual void Descriere_inventar_general() = 0;
+    int valoare_inventar();
+    virtual int Eficienta() = 0;
     virtual ~echipament() = default;
 };
 
@@ -36,8 +36,7 @@ public :
     void swap( undita &und1, undita &und2);
     int pret_total();
     std::shared_ptr<echipament> clone() override;
-    void shopping(double sum) override;
-    void Descriere_inventar_general() override;
+    int Eficienta() override;
     virtual ~undita() = default;
 };
 
@@ -53,8 +52,7 @@ public :
     void swap( carlig &car1, carlig &car2);
     int pret_total();
     std::shared_ptr<echipament> clone() override;
-    void shopping(double sum) override;
-    void Descriere_inventar_general() override;
+    int Eficienta() override;
     virtual ~carlig() = default;
 };
 
@@ -71,8 +69,7 @@ public :
     void swap( mamaliga &mam1, mamaliga &mam2);
     int pret_total();
     std::shared_ptr<echipament> clone() override;
-    void shopping(double sum) override;
-    void Descriere_inventar_general() override;
+    int Eficienta() override;
     virtual ~mamaliga() = default;
 };
 #endif // PRODUSE_H

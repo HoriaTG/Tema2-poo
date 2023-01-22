@@ -27,9 +27,5 @@ class necalificat : public eroare
 public :
     explicit necalificat(const std::string &string_) : eroare("Eroare angajat..." + string_) {}
 };
-class optiune_gresita : public eroare
-{
-    public :
-    explicit optiune_gresita(const std::string &string_) : eroare("Eroare optiune..." + string_){}
-};
+
 #endif // EXCEPTII_H
