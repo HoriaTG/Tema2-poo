@@ -51,21 +51,6 @@ std::ostream &operator<<(std::ostream &os,const mamaliga &mam)
     return os;
 }
 
-int undita::pret_total()
-{
-    return pret*stoc;
-}
-
-int carlig::pret_total()
-{
-    return pret*stoc;
-}
-
-int mamaliga::pret_total()
-{
-    return pret*stoc;
-}
-
 std::shared_ptr<echipament> undita::clone()
 {
     return std::make_shared<undita>(*this);

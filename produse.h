@@ -17,7 +17,6 @@ public :
     echipament(const echipament &other) = default;
     echipament &operator=(echipament &other);
     void swap( echipament &ech1, echipament &ech2);
-    int pret_total();
     virtual std::shared_ptr<echipament> clone() = 0 ;
     int valoare_inventar();
     virtual int Eficienta() = 0;
@@ -34,7 +33,6 @@ public :
     undita(const undita &other) = default;
     undita &operator=(undita &other);
     void swap( undita &und1, undita &und2);
-    int pret_total();
     std::shared_ptr<echipament> clone() override;
     int Eficienta() override;
     virtual ~undita() = default;
@@ -50,7 +48,6 @@ public :
     carlig(const carlig &other) = default;
     carlig &operator=(carlig &other);
     void swap( carlig &car1, carlig &car2);
-    int pret_total();
     std::shared_ptr<echipament> clone() override;
     int Eficienta() override;
     virtual ~carlig() = default;
@@ -67,7 +64,6 @@ public :
     mamaliga(const mamaliga &other) = default;
     mamaliga &operator=(mamaliga &other);
     void swap( mamaliga &mam1, mamaliga &mam2);
-    int pret_total();
     std::shared_ptr<echipament> clone() override;
     int Eficienta() override;
     virtual ~mamaliga() = default;
