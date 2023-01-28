@@ -128,28 +128,56 @@ mamaliga &mamaliga::operator=(mamaliga &other)
     return *this;
 }
 
-int echipament::valoare_inventar()
+pachet_de_pescuit::pachet_de_pescuit(const std::vector<std::shared_ptr<undita> > &undite,const std::vector<std::shared_ptr<carlig> > &carlige,const std::vector<std::shared_ptr<mamaliga> > &mamaligi)
+ {
+     this->undite = undite;
+     this->carlige = carlige;
+     this->mamaligi = mamaligi;
+ }
+void pachet_de_pescuit::CalculInventar()
 {
-    return stoc*pret;
+    int InvU,InvC,InvM;
+    InvU = 0;
+    InvC = 0;
+    InvM = 0;
+
+    for(auto i:this->undite)
+        InvU = i->getPret()*i->getStoc() + InvU;
+    for(auto i:this->carlige)
+        InvC = i->getPret()*i->getStoc() + InvC;
+    for(auto i:this->mamaligi)
+        InvM = i->getPret()*i->getStoc() + InvM;
+
+    std::cout<<"Pretul total al inventarului este : "<<InvU+InvC+InvM<<std::endl;
 }
 
-int undita::Eficienta()
+void pachet_de_pescuit::Eficienta()
 {
-    if(pret/lungime + 10 > 30)
-        return 1;
-    return 0;
+    for(auto i:undite)
+        if((i->getPret()/i->getLungime()+10) > 30)
+        std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
+
+    for(auto i:carlige)
+        if((i->getDimensiune()*i->getPret())/i->getStoc() > 5)
+        std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
+
+    for(auto i:mamaligi)
+        if((i->getPret()*i->getPret())/4*i->getStoc() > 10)
+        std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
 }
 
-int carlig::Eficienta()
+void pachet_de_pescuit::Afisare()
 {
-    if(dimensiune*pret/stoc > 5)
-        return 1;
-    return 0;
-}
-
-int mamaliga::Eficienta()
-{
-    if((pret+pret)/4*stoc > 10)
-        return 1;
-    return 0;
+    for(unsigned i=0; i<undite.size(); i++)
+        std::cout<<*undite[i]<<std::endl;
+    for(unsigned i=0; i<carlige.size(); i++)
+        std::cout<<*carlige[i]<<std::endl;
+    for(unsigned i=0; i<mamaligi.size(); i++)
+        std::cout<<*mamaligi[i]<<std::endl;
 }

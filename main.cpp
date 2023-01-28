@@ -65,43 +65,14 @@ int main()
     mamaligi.push_back(p8);
     mamaligi.push_back(p9);
 
-    for(unsigned i=0; i<undite.size(); i++)
-        std::cout<<*undite[i]<<std::endl;
-    for(unsigned i=0; i<carlige.size(); i++)
-        std::cout<<*carlige[i]<<std::endl;
-    for(unsigned i=0; i<mamaligi.size(); i++)
-        std::cout<<*mamaligi[i]<<std::endl;
-
-    std::vector<std::shared_ptr<echipament> > sor;
-    for(auto i:undite)
-        sor.push_back(i);
-    for(auto i:carlige)
-        sor.push_back(i);
-    for(auto i:mamaligi)
-        sor.push_back(i);
-
-    static int val;
-    for(auto i:sor)
-    {
-        val = val + i->valoare_inventar();
-    }
-    std::cout<<"Valoarea totala a inventarului : "<<val<<std::endl;
-
     for(auto i:v1)
         i.promovare();
 
-    for(auto i:undite)
-        if(i->Eficienta() == 1)
-            std::cout<<"Eficienta ridicata"<<std::endl;
-        else std::cout<<"Eficienta scazuta"<<std::endl;
-    for(auto i:carlige)
-        if(i->Eficienta() == 1)
-            std::cout<<"Eficienta ridicata"<<std::endl;
-        else std::cout<<"Eficienta scazuta"<<std::endl;
-    for(auto i:mamaligi)
-        if(i->Eficienta() == 1)
-            std::cout<<"Eficienta ridicata"<<std::endl;
-        else std::cout<<"Eficienta scazuta"<<std::endl;
+    pachet_de_pescuit pac(undite,carlige,mamaligi);
+    pac.Afisare();
+    pac.CalculInventar();
+    pac.Eficienta();
+
 
     return 0;
 }
