@@ -10,7 +10,7 @@ class echipament
 protected :
     std::string material;
     double pret;
-    int stoc;
+    static int stoc;
 public :
     echipament(const std::string &material,double pret,int stoc);
     friend std::ostream &operator<<(std::ostream &os,const echipament &ech);

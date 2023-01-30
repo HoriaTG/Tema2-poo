@@ -11,6 +11,8 @@ echipament::echipament(const std::string &material,double pret,int stoc)
     this->stoc=stoc;
 }
 
+int echipament::stoc = 1;
+
 undita::undita(const std::string &material,double pret,int stoc,int lungime) : echipament(material,pret,stoc)
 {
     this->lungime = lungime;
