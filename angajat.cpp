@@ -23,7 +23,7 @@ void angajat::promovare()
 {
     std::cout<<"Angajatul "<<nume;
     if(ani_experienta>5 && ani_experienta<10)
-        std::cout<<" nu promoveaza"<<std::endl<<std::endl;
+        throw ani_insuficienti(" ani insuficienti");
     else
     if(ani_experienta>=10 && ani_experienta<15)
         std::cout<<" promoveaza la functia de sef de tura"<<std::endl<<std::endl;

@@ -17,9 +17,14 @@ int main()
     std::vector<std::shared_ptr<carlig>> carlige ;
     std::vector<std::shared_ptr<mamaliga>> mamaligi;
 
+    std::shared_ptr<echipament> ech1 = std::make_shared<undita>("Bambus",50,80,6);
+    std::shared_ptr<echipament> ech2 = std::make_shared<undita>("Lemn",80,100,5);
+    ech2 = ech1->clone();
+    std::cout<<*ech1<<std::endl<<*ech2<<std::endl;
+
     try
     {
-        angajat ang1("Carp","Horia",1700,6);
+        angajat ang1("Carp","Horia",1700,15);
         angajat ang2("Fishin'Legends","Florin",2000,10);
         v1.push_back(ang1);
         v1.push_back(ang2);
@@ -47,6 +52,14 @@ int main()
         mamaligi.push_back(p7);
         mamaligi.push_back(p8);
         mamaligi.push_back(p9);
+
+        for(auto i:v1)
+            i.promovare();
+
+        pachet_de_pescuit pac(undite,carlige,mamaligi);
+        pac.Afisare();
+        pac.CalculInventar();
+        pac.Eficienta();
     }
     catch(lungime_eronata &err)
     {
@@ -60,23 +73,12 @@ int main()
     {
         std::cout<<err.what()<<std::endl;
     }
+    catch(ani_insuficienti &err)
+    {
+        std::cout<<err.what()<<std::endl;
+    }
 
     magazin mag("Kogalniceanu 14",v1);
-    std::cout<<mag;
-
-    std::shared_ptr<echipament> ech1 = std::make_shared<undita>("Bambus",50,80,6);
-    std::shared_ptr<echipament> ech2 = std::make_shared<undita>("Lemn",80,100,5);
-    ech2 = ech1->clone();
-    std::cout<<*ech1<<std::endl<<*ech2<<std::endl;
-
-    for(auto i:v1)
-        i.promovare();
-
-    pachet_de_pescuit pac(undite,carlige,mamaligi);
-    pac.Afisare();
-    pac.CalculInventar();
-    pac.Eficienta();
-
 
     return 0;
 }

@@ -148,6 +148,9 @@ void pachet_de_pescuit::CalculInventar()
     for(auto i:this->mamaligi)
         InvM = i->getPret()*i->getStoc() + InvM;
 
+    if(InvU+InvC+InvM < 2000)
+        throw stoc_redus(" magazinul trebuie aprovizionat de urgenta");
+
     std::cout<<"Pretul total al inventarului este : "<<InvU+InvC+InvM<<std::endl;
 }
 

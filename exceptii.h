@@ -28,4 +28,15 @@ public :
     explicit necalificat(const std::string &string_) : eroare("Eroare angajat..." + string_) {}
 };
 
+class ani_insuficienti : public eroare
+{
+public :
+    explicit ani_insuficienti(const std::string &string_) : eroare(" nu promoveaza..." + string_){}
+};
+
+class stoc_redus : public eroare
+{
+public :
+    explicit stoc_redus(const std::string &string_) : eroare(" stoc redus ..." + string_){}
+};
 #endif // EXCEPTII_H
