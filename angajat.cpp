@@ -1,9 +1,9 @@
 #include "angajat.h"
 #include "exceptii.h"
 
-angajat::angajat(const std::string &nume_firma,const std::string &nume, double salariu,int ani_experienta)
+angajat::angajat(const std::string &nume_firma_arg,const std::string &nume, double salariu,int ani_experienta)
 {
-    angajat::nume_firma = nume_firma;
+    angajat::nume_firma = nume_firma_arg;
     this->nume = nume;
     this->salariu = salariu;
     this->ani_experienta = ani_experienta;
