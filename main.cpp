@@ -53,6 +53,7 @@ int main()
         mamaligi.push_back(p8);
         mamaligi.push_back(p9);
 
+        magazin mag("Kogalniceanu 14",v1);
         for(auto i:v1)
             i.promovare();
 
@@ -77,8 +78,6 @@ int main()
     {
         std::cout<<err.what()<<std::endl;
     }
-
-    magazin mag("Kogalniceanu 14",v1);
 
     return 0;
 }
