@@ -151,25 +151,40 @@ void pachet_de_pescuit::CalculInventar()
     std::cout<<"Pretul total al inventarului este : "<<InvU+InvC+InvM<<std::endl;
 }
 
+void undita::Calcul_Eficienta()
+{
+    if((pret/lungime)+10 > 30)
+        std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
+}
+
+void carlig::Calcul_Eficienta()
+{
+    if((dimensiune*pret)/stoc > 5)
+         std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
+}
+
+void mamaliga::Calcul_Eficienta()
+{
+    if((pret*pret)/4*stoc > 10)
+        std::cout<<"Eficienta ridicata "<<std::endl;
+    else
+        std::cout<<"Eficienta scazuta "<<std::endl;
+}
+
 void pachet_de_pescuit::Eficienta()
 {
     for(auto i:undite)
-        if((i->getPret()/i->getLungime()+10) > 30)
-        std::cout<<"Eficienta ridicata "<<std::endl;
-    else
-        std::cout<<"Eficienta scazuta "<<std::endl;
+        i->Calcul_Eficienta();
 
     for(auto i:carlige)
-        if((i->getDimensiune()*i->getPret())/i->getStoc() > 5)
-        std::cout<<"Eficienta ridicata "<<std::endl;
-    else
-        std::cout<<"Eficienta scazuta "<<std::endl;
+        i->Calcul_Eficienta();
 
     for(auto i:mamaligi)
-        if((i->getPret()*i->getPret())/4*i->getStoc() > 10)
-        std::cout<<"Eficienta ridicata "<<std::endl;
-    else
-        std::cout<<"Eficienta scazuta "<<std::endl;
+        i->Calcul_Eficienta();
 }
 
 void pachet_de_pescuit::Afisare()

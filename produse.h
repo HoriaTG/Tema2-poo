@@ -19,6 +19,7 @@ public :
     void swap( echipament &ech1, echipament &ech2);
     virtual std::shared_ptr<echipament> clone() = 0 ;
     virtual ~echipament() = default;
+    virtual void Calcul_Eficienta() = 0;
 };
 
 class undita : public echipament
@@ -36,6 +37,7 @@ public :
     double getPret() const {return pret;}
     int getStoc() const {return stoc;}
     int getLungime() const {return lungime;}
+    void Calcul_Eficienta() override;
 };
 
 class carlig : public echipament
@@ -53,6 +55,7 @@ public :
     double getPret() const {return pret;}
     int getStoc() const {return stoc;}
     int getDimensiune() const {return dimensiune;}
+    void Calcul_Eficienta() override;
 };
 
 class mamaliga : public echipament
@@ -70,6 +73,7 @@ public :
     virtual ~mamaliga() = default;
     double getPret() const {return pret;}
     int getStoc() const {return stoc;}
+    void Calcul_Eficienta() override;
 };
 
 class pachet_de_pescuit
