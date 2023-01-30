@@ -12,10 +12,6 @@ int main()
     std::shared_ptr<undita> p1,p2,p3;
     std::shared_ptr<carlig> p4,p5,p6;
     std::shared_ptr<mamaliga> p7,p8,p9;
-    std::vector<angajat> v1;
-    std::vector<std::shared_ptr<undita>> undite;
-    std::vector<std::shared_ptr<carlig>> carlige ;
-    std::vector<std::shared_ptr<mamaliga>> mamaligi;
 
     std::shared_ptr<echipament> ech1 = std::make_shared<undita>("Bambus",50,80,6);
     std::shared_ptr<echipament> ech2 = std::make_shared<undita>("Lemn",80,100,5);
@@ -24,6 +20,11 @@ int main()
 
     try
     {
+        std::vector<angajat> v1;
+        std::vector<std::shared_ptr<undita>> undite;
+        std::vector<std::shared_ptr<carlig>> carlige ;
+        std::vector<std::shared_ptr<mamaliga>> mamaligi;
+
         angajat ang1("Carp","Horia",1700,15);
         angajat ang2("Fishin'Legends","Florin",2000,10);
         v1.push_back(ang1);
