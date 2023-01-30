@@ -3,7 +3,7 @@
 
 angajat::angajat(const std::string &nume_firma,const std::string &nume, double salariu,int ani_experienta)
 {
-    this->nume_firma = nume_firma;
+    angajat::nume_firma = nume_firma;
     this->nume = nume;
     this->salariu = salariu;
     this->ani_experienta = ani_experienta;
